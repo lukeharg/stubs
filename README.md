@@ -25,3 +25,5 @@ User Guide (Updated 7 December 2017)
 
 ## Notes
 - Uses the *haversine* formula to calculate the distance between two points on the globe.
+- aws dynamodb batch-write-item --request-items file://WorldCities.json
+- node csvloader.js > WorldCities.json
