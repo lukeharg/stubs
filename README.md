@@ -22,8 +22,10 @@ User Guide (Updated 7 December 2017)
 2. https://simplemaps.com/data/world-cities
 3. https://hackernoon.com/restful-api-designing-guidelines-the-best-practices-60e1d954e7c9
 4. http://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-importexport-ddb-part1.html
+5. http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/GettingStarted.NodeJs.html
 
 ## Notes
 - Uses the *haversine* formula to calculate the distance between two points on the globe.
 - aws dynamodb batch-write-item --request-items file://WorldCities.json
 - node csvloader.js > WorldCities.json
+- java -Djava.library.path=./DynamoDBLocal_lib -jar DynamoDBLocal.jar -sharedDb
