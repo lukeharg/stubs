@@ -1,17 +1,13 @@
 var AWS = require("aws-sdk");
+var dbConfig = require("./db-config.js");
 
-AWS.config.update({
-  region: "ap-southeast-2",
-  endpoint: "http://localhost:8000"
-});
-
-var dynamodb = new AWS.DynamoDB();
+var dynamoDB = new AWS.DynamoDB();
 
 var params = {
-    TableName : "WorldCitiesBasic"
+    TableName : "WorldCities"
 };
 
-dynamodb.deleteTable(params, function(err, data) {
+dynamoDB.deleteTable(params, function(err, data) {
   if (err) {
     console.error("Unable to delete table. Error JSON:", JSON.stringify(err, null, 2));
   } else {

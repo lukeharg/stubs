@@ -1,0 +1,14 @@
+{
+  "name": "worldcities",
+  "version": "1.0.0",
+  "description": "An API for retrieving basic information about cities across the world.",
+  "dependencies": {
+    "aws-sdk": "2.168.0",
+    "csv-parse": "2.0.0"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "https",
+    "url": "github.com/luclabs/stubs.git"
+  }
+}

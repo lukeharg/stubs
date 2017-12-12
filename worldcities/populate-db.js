@@ -1,13 +1,9 @@
 var AWS = require("aws-sdk");
 var fs = require("fs");
 var csvParse = require("csv-parse/lib/sync");
+var dbConfig = require("./db-config.js");
 
-const CSV_DATA_PATH = "simplemaps-worldcities-basic.csv"
-
-AWS.config.update({
-  region: "ap-southeast-2",
-  endpoint: "http://localhost:8000"
-});
+const CSV_DATA_PATH = "simplemaps-worldcities-basic.csv";
 
 var docClient = new AWS.DynamoDB.DocumentClient();
 
@@ -16,7 +12,7 @@ console.log("Importing cities into DynamoDB. Please wait...");
 var worldcities = csvParse(fs.readFileSync(CSV_DATA_PATH), {columns: true});
 worldcities.forEach(function(city) {
   var params = {
-    TableName: "WorldCitiesBasic",
+    TableName: "WorldCities",
     Item: {
       "city":  city.city,
       "city_ascii": city.city_ascii,
